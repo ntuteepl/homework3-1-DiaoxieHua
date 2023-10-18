@@ -1,25 +1,35 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main()
+int main() {
+    int a,b,c,d,e,f;
+    scanf("%d %d %d %d %d %d",&a,&b,&c,&d,&e,&f);
+    int L[3][2]={{a,b},{c,d},{e,f}};
+    
+    for (int i=0;i<3;i++) 
 {
-int part11,part12,part21,part22,part31,part32,cars;
-scanf("%d %d",&part11,&part12);
-scanf("%d %d",&part21,&part22);
-scanf("%d %d",&part31,&part32);
-cars=1;
-if(part11==part12||part21==part22||part31==part32){
-        printf("格式錯誤");
-}
-else{
-if(part12<=part21||part22<=part31||part12<=part22||part21<=part12)
+    for (int j=i+1;j<3;j++)
 {
-    cars=cars+1;
+    if (L[i][1]>L[j][1])
+{
+    int l[2] = {L[i][0],L[i][1]};
+        L[i][0]=L[j][0];
+        L[i][1]=L[j][1];
+        L[j][0]=l[0];
+        L[j][1]=l[1];
 }
-else{
-        cars=1;
+}
+}
+int cars=1;
+int first back = L[0][1];
+    for (int i = 1; i < 3; i++) {
+    if (L[i][0] >= first back) {
+    first back = L[i][1];
+}
+    else
+{
+    g++;
+}
+}
 
-}
-}
-printf("%d", cars);
+    printf("%d", cars);
 }
