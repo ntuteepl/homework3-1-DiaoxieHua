@@ -1,35 +1,28 @@
 #include <stdio.h>
 
-int main() {
-    int a,b,c,d,e,f;
-    scanf("%d %d %d %d %d %d",&a,&b,&c,&d,&e,&f);
-    int L[3][2]={{a,b},{c,d},{e,f}};
+int digitSum(int n) 
+{
+    int k=0;
+    while (n>0) 
+{
+    k+=n%10;
+    n/=10;
+}
+    return k;
+}
+int main() 
+{
+    int a, b;
+    scanf("%d %d", &a, &b);
+    int kA=digitSum(a);
+    int kB=digitSum(b);
     
-    for (int i=0;i<3;i++) 
+    if (kA<kB||(kA==kB &&a<b)) 
 {
-    for (int j=i+1;j<3;j++)
+        printf("%d", a);
+} 
+    else 
 {
-    if (L[i][1]>L[j][1])
-{
-    int l[2] = {L[i][0],L[i][1]};
-        L[i][0]=L[j][0];
-        L[i][1]=L[j][1];
-        L[j][0]=l[0];
-        L[j][1]=l[1];
+        printf("%d", b);
 }
-}
-}
-int cars=1;
-int first back = L[0][1];
-    for (int i = 1; i < 3; i++) {
-    if (L[i][0] >= first back) {
-    first back = L[i][1];
-}
-    else
-{
-    g++;
-}
-}
-
-    printf("%d", cars);
 }
