@@ -20,7 +20,7 @@ int main() {
 }
 }
 int cars=1;
-int back = L[0][1];
+int back=L[0][1];
     for (int i=1;i<3;i++)
 {
     if (L[i][0]>=back)
