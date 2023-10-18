@@ -3,7 +3,7 @@
 int main(){
 int a1,a2,b1,b2,m1,m2,t1,t2,t3,t4,A,B;
 scanf("%d", &a1);
-    while(a1<1000||a1>9999){
+    while(a1<0000||a1>9999){
     scanf("%d", &a1);
 }
     for(int x=0;x<2;x++){
